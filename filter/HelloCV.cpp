@@ -35,4 +35,4 @@ void filter_embossing()
     imshow("dst", dst);
     waitKey();
     destroyAllWindows();
-}
+}  
