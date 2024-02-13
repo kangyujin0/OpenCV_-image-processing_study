@@ -43,5 +43,5 @@ void on_mouse(int event, int x, int y, int flags, void*)
         break;
     default:
         break;
-    }
+    }  
 }
