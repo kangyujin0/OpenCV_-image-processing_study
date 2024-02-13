@@ -30,7 +30,7 @@ int main()
     //NORMAL_CLONE: 클론을 시행할 때 사용되는 플래그로, 일반적인 복제 작업을 수행
 
 
-    TickMeter tm;//이미지를 역방향으로 변환하는 데 걸리는 시간을 측정
+    TickMeter tm; //이미지를 역방향으로 변환하는 데 걸리는 시간을 측정
     tm.start();
 
     for (int j = 0; j < dst.rows; j++) {
