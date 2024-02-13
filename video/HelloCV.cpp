@@ -28,7 +28,7 @@ void camera_in() {
 	while (true)
 	{
 		cap >> frame;		// 카메라 장치로부터 한 프레임을 받아와 frmae변수에 저장
-		if (frame.empty())  // 해당 프레임 영상이 비어 있으면 루프를 나감
+		if (frame.empty())      // 해당 프레임 영상이 비어 있으면 루프를 나감
 		{
 			break;
 		}
