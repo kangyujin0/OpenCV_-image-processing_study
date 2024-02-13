@@ -46,7 +46,7 @@ int main()
     imshow("output", output);
     imshow("dst", dst);
 
-    waitKey();
+    waitKey(); 
     destroyAllWindows();
 
     return 0;
