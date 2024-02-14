@@ -81,7 +81,7 @@ void median()
     imshow("gaussian", dst1);
 
     Mat dst2;
-    medianBlur(src, dst2, 3);
+    medianBlur(src, dst2, 3); 
     imshow("dst2", dst2);
 
     waitKey();
