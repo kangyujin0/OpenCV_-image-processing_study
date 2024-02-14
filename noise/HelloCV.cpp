@@ -6,10 +6,12 @@ using namespace std;
 
 void noise_gaussian();
 void bilateral();
+void median();
 int main()
 {    
     //noise_gaussian();
-    bilateral();
+    //bilateral();
+    median();
 }
 
 void noise_gaussian()
@@ -53,6 +55,33 @@ void bilateral()
     
     Mat dst2;
     bilateralFilter(src, dst2, -1, 10, 30);
+    imshow("dst2", dst2);
+
+    waitKey();
+    destroyAllWindows();
+
+    return;
+}
+
+void median()
+{
+    Mat src = imread("C:/Users/EMBEDDED/Desktop/CV/images/lena.jpg", IMREAD_GRAYSCALE);
+        
+    int num = (int)(src.total() * 0.1); //데이터 전체 크기의 10% 픽셀 값을 0 or 255로 설정
+    for (int i = 0; i < num; i++) {
+        int x = rand() % src.cols; //rand() 사용하여 0부터 src.cols - 1 
+        int y = rand() % src.rows; //또는 src.rows - 1 사이의 임의의 정수를 선택
+        src.at<uchar>(y, x) = (i % 2) * 255;
+    }
+
+    imshow("src", src);
+
+    Mat dst1;
+    GaussianBlur(src, dst1, Size(), 1);
+    imshow("gaussian", dst1);
+
+    Mat dst2;
+    medianBlur(src, dst2, 3);
     imshow("dst2", dst2);
 
     waitKey();
